@@ -125,15 +125,28 @@ class MensagemController extends Controller
             $obj_mensagens->save();
             return redirect('/mensagens')->with('success', 'Mensagem alterada com sucesso!!');
     }
-
+      /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\mensagens  $mensagens
+     * @return \Illuminate\Http\Response
+     */
+    public function delete($id)
+    {
+        $obj_mensagens = mensagens::find($id);
+        return view('mensagens.delete',['mensagens' => $obj_mensagens]);
+    }
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\mensagens  $mensagens
      * @return \Illuminate\Http\Response
      */
-    public function destroy(mensagens $mensagens)
+    public function destroy($id)
     {
-        //
+         $obj_mensagens = mensagens::findOrFail($id);
+            $obj_mensagens->delete($id);
+            return redirect('/mensagens')->with('success','Mensagem excluída com sucesso!!');
+        
     }
 }

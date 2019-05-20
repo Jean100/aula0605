@@ -6,3 +6,9 @@
 <h3><b>Descrição:</b> {{$atividade->description}}</h3>
 <h3><b>Criada em:</b> {{\Carbon\Carbon::parse($atividade->created_at)->format('d/m/Y h:m')}}</h3>
 <h3><b>Atualizada em:</b> {{\Carbon\Carbon::parse($atividade->updated_at)->format('d/m/Y h:m')}}</h3>
+<br>
+<a href="/atividades/{{$atividade->id}}/edit">Editar</a>
+<br>
+<a href="/atividades/{{$atividade->id}}/delete">Excluir</a>
+<br><br>
+<a href="/atividades">Voltar a tela inicial</a>

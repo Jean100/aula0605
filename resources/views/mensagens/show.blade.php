@@ -3,5 +3,10 @@
 <h2>{{$mensagem->titulo}}</h2>
 <h2>{{$mensagem->autor}}</h2>
 <h2>{{$mensagem->texto}}</h2>
-<h2>{{$mensagem->created_at}}</h2>
-<h2>{{$mensagem->updated_at}}</h2>
+
+<a href="/mensagens/{{$mensagem->id}}/edit">Editar Mensagem</a>
+<br>
+
+<a href="/mensagens/{{$mensagem->id}}/delete">Excluir</a>
+<br><br>
+<a href="/mensagens/">Voltar a tela inicial</a>
